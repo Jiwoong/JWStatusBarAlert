@@ -15,6 +15,7 @@
 		CF4E47761586F77E00515432 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E47751586F77E00515432 /* AppDelegate.m */; };
 		CF4E47791586F77E00515432 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E47781586F77E00515432 /* ViewController.m */; };
 		CF4E477C1586F77E00515432 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4E477A1586F77E00515432 /* ViewController.xib */; };
+		CF4E47851586F7F500515432 /* JWStatusBarAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4E47841586F7F500515432 /* JWStatusBarAlert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		CF4E47651586F77E00515432 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF4E47671586F77E00515432 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF4E47691586F77E00515432 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CF4E476D1586F77E00515432 /* JWStatusBarAlert-Info.plist */ = {isa = PBXFileReference; path = "JWStatusBarAlert-Info.plist"; sourceTree = "<group>"; };
+		CF4E476D1586F77E00515432 /* JWStatusBarAlert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JWStatusBarAlert-Info.plist"; sourceTree = "<group>"; };
 		CF4E476F1586F77E00515432 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF4E47711586F77E00515432 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CF4E47731586F77E00515432 /* JWStatusBarAlert-Prefix.pch */ = {isa = PBXFileReference; path = "JWStatusBarAlert-Prefix.pch"; sourceTree = "<group>"; };
-		CF4E47741586F77E00515432 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF4E47731586F77E00515432 /* JWStatusBarAlert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JWStatusBarAlert-Prefix.pch"; sourceTree = "<group>"; };
+		CF4E47741586F77E00515432 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF4E47751586F77E00515432 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CF4E47771586F77E00515432 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		CF4E47771586F77E00515432 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CF4E47781586F77E00515432 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF4E477B1586F77E00515432 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		CF4E47831586F7F500515432 /* JWStatusBarAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWStatusBarAlert.h; sourceTree = "<group>"; };
+		CF4E47841586F7F500515432 /* JWStatusBarAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWStatusBarAlert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		CF4E476B1586F77E00515432 /* JWStatusBarAlert */ = {
 			isa = PBXGroup;
 			children = (
+				CF4E47821586F7C400515432 /* JWStatusBarAlert */,
 				CF4E47741586F77E00515432 /* AppDelegate.h */,
 				CF4E47751586F77E00515432 /* AppDelegate.m */,
 				CF4E47771586F77E00515432 /* ViewController.h */,
@@ -96,6 +100,15 @@
 				CF4E47731586F77E00515432 /* JWStatusBarAlert-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF4E47821586F7C400515432 /* JWStatusBarAlert */ = {
+			isa = PBXGroup;
+			children = (
+				CF4E47831586F7F500515432 /* JWStatusBarAlert.h */,
+				CF4E47841586F7F500515432 /* JWStatusBarAlert.m */,
+			);
+			name = JWStatusBarAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +177,7 @@
 				CF4E47721586F77E00515432 /* main.m in Sources */,
 				CF4E47761586F77E00515432 /* AppDelegate.m in Sources */,
 				CF4E47791586F77E00515432 /* ViewController.m in Sources */,
+				CF4E47851586F7F500515432 /* JWStatusBarAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

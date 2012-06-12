@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	_alert = [[JWStatusBarAlert alloc] initWithFrame:self.view.frame];
 }
 
 - (void)viewDidUnload
@@ -31,4 +32,14 @@
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)show:(id)sender {
+	
+	//[_alert showStatusMessage:@"Maecenas faucibus mollis interdum."];
+	[JWStatusBarAlert showStatusMessage:@"Hello World"];
+	
+}
+
+- (IBAction)hide:(id)sender {
+	[_alert hide];
+}
 @end

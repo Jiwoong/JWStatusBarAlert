@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JWStatusBarAlert.h"
 
 @interface ViewController : UIViewController
+{
+	JWStatusBarAlert* _alert;
+}
+- (IBAction)show:(id)sender;
+- (IBAction)hide:(id)sender;
 
 @end
