@@ -38,19 +38,31 @@
 
 
 
-- (void) showStatusMessage:(NSString*) message;
+- (void) showStatusMessage:(NSString*) message withAnimation:(JWStatusBarAlertAnimation)animation;
 {
 	self.hidden = NO;
 	self.alpha = 1.0f;
 	_statusMsgLabel.text = @"";
 	
 	CGSize totalSize = self.frame.size;
+
+	CGRect startFrame;
+	CGRect endFrame;
 	
-	self.frame = (CGRect){self.frame.origin, totalSize.width, 0};
+	if (animation == JWStatusBarAlertAnimationVerticalSlide) {
+		startFrame = (CGRect){self.frame.origin, totalSize.width, 0};
+		endFrame = (CGRect){ self.frame.origin, totalSize};
+	}
+	else if (animation == JWStatusBarAlertAnimationHorizontalSlide) {
+		startFrame = (CGRect){self.frame.origin, 0, totalSize.height};
+		endFrame = (CGRect){ self.frame.origin, totalSize};
+	}
+	
+	self.frame = startFrame;
 	
 	[UIView animateWithDuration:0.5f
 					 animations:^{
-						 self.frame = (CGRect){ self.frame.origin, totalSize};
+						 self.frame = endFrame;
 					 }
 					 completion:^(BOOL finished){
 						  _statusMsgLabel.text = message;
@@ -73,17 +85,29 @@
 					}];;
 }
 
++ (JWStatusBarAlert *) showStatusMessage:(NSString *)message whthDuration:(NSTimeInterval)duration withAnimation:(JWStatusBarAlertAnimation) animation
+{	
+	JWStatusBarAlert* alert = [[JWStatusBarAlert alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+	
+	[alert showStatusMessage:message withAnimation:animation];
+	
+	[alert performSelector:@selector(hide) withObject:nil afterDelay:duration];
+	
+	return [alert autorelease];
+}
 
++ (JWStatusBarAlert *) showStatusMessage:(NSString*) message whthDuration:(NSTimeInterval)duration
+{
+	return [JWStatusBarAlert showStatusMessage:message
+								  whthDuration:duration
+								 withAnimation:JWStatusBarAlertAnimationVerticalSlide];
+}
 
 + (JWStatusBarAlert *) showStatusMessage:(NSString*) message
 {
-	JWStatusBarAlert* alert = [[JWStatusBarAlert alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-	
-	[alert showStatusMessage:message];
-	
-	[alert performSelector:@selector(hide) withObject:nil afterDelay:5];
-	
-	return [alert autorelease];
+	return [JWStatusBarAlert showStatusMessage:message
+								  whthDuration:5
+								 withAnimation:JWStatusBarAlertAnimationVerticalSlide];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

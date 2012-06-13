@@ -15,20 +15,24 @@
 
 #import <UIKit/UIKit.h>
 
-enum JWStatusBarAlertDirection {
-	JWStatusBarAlertDirectionVertical = 0,
-	JWStatusBarAlertDirectionHorizontal = 1
-	};
+typedef enum 
+{
+	JWStatusBarAlertAnimationVerticalSlide = 0,
+	JWStatusBarAlertAnimationHorizontalSlide = 1
+} JWStatusBarAlertAnimation;
 
 @interface JWStatusBarAlert : UIWindow
 {
 	UILabel* _statusMsgLabel;
+	
 }
 
 + (JWStatusBarAlert *) showStatusMessage:(NSString*) message;
++ (JWStatusBarAlert *) showStatusMessage:(NSString*) message whthDuration:(NSTimeInterval)duration;
++ (JWStatusBarAlert *) showStatusMessage:(NSString *)message whthDuration:(NSTimeInterval)duration withAnimation:(JWStatusBarAlertAnimation) animation;
 
 
-- (void) showStatusMessage:(NSString*) message;
+- (void) showStatusMessage:(NSString*) message withAnimation:(JWStatusBarAlertAnimation) animation;
 
 //- (void) showStatusMessage:(NSString *)message withDirection:(NSNumber) direction;
 

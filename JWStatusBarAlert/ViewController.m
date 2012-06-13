@@ -35,8 +35,11 @@
 - (IBAction)show:(id)sender {
 	
 	//[_alert showStatusMessage:@"Maecenas faucibus mollis interdum."];
-	[JWStatusBarAlert showStatusMessage:@"Hello World"];
-	
+	//[JWStatusBarAlert showStatusMessage:@"Hello World" whthDuration:3];
+	//[JWStatusBarAlert showStatusMessage:@"Maecenas faucibus mollis interdum." wi];
+	[JWStatusBarAlert showStatusMessage:@"Maecenas faucibus mollis interdum."
+						   whthDuration:4
+						  withAnimation:JWStatusBarAlertAnimationHorizontalSlide];
 }
 
 - (IBAction)hide:(id)sender {
