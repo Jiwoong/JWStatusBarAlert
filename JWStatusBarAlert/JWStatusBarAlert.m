@@ -91,7 +91,9 @@
 	
 	[alert showStatusMessage:message withAnimation:animation];
 	
-	[alert performSelector:@selector(hide) withObject:nil afterDelay:duration];
+	[alert performSelector:@selector(hide) 
+				withObject:nil 
+				afterDelay:duration];
 	
 	return [alert autorelease];
 }

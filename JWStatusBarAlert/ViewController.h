@@ -11,9 +11,11 @@
 
 @interface ViewController : UIViewController
 {
-	JWStatusBarAlert* _alert;
+	NSInteger _selectedDirection;
+	NSTimeInterval _selectedInterval;
+	
+	UILabel* _labelTime;
 }
 - (IBAction)show:(id)sender;
-- (IBAction)hide:(id)sender;
 
 @end
